@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    .container {
+      width: 40%;
+      margin: 20px auto 0px auto;
+    }
+
+    .removed label {
+      text-decoration: line-through;
+    }
+
+    ul li {
+      list-style-type: none;
+    }
+
+    ul li span {
+      margin-left: 5px;
+    }
+
+    .footer {
+      font-size: 0.7em;
+      margin-top: 20vh;
+    }
+    .active {
+      color: green;
+    }
+    .shutoff {
+      color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <h2>{{ title }}</h2>
+    <div class="input-group">
+      <input v-model="id" @keyup.enter="addItem" placeholder="Enter ID server" type="text" class="form-control">
+      <input v-model="name" @keyup.enter="addItem" placeholder="Enter name server" type="text" class="form-control">
+      <input v-model="status" @keyup.enter="addItem" placeholder="Enter status server" class="form-control" type="text">
+      <input v-model="expired" @keyup.enter="addItem" placeholder="Enter number of day to used" class="form-control" type="text">
+      <span class="input-group-btn">
+        <button @click="addItem" class="btn btn-default" type="button">Add!</button>
+        <button @click="say('Input new Item now!')" class="btn btn-success">Notify</button>
+      </span>
+    </div>
+    <ul>
+      <table class="table">
+        <thead>
+          <tr v-for="item in items">
+            <th>#</th>
+            <th>Name</th>
+            <th>Status</th>
+            <td>Expired</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody v-for="item in items">
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.expired }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ul>
+    <div class="footer">
+      <hr />
+      <em>Change the title of your shopping list here</em>
+      <input v-model="title" />
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

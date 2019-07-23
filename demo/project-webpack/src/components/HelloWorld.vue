@@ -94,6 +94,17 @@ export default {
 }
 </script>
 
+<script>
+  export default {
+    name: 'Hello',
+    data () {
+      return {
+        msg: 'Welcome to Vue router'
+      }
+    }
+  }
+</script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {

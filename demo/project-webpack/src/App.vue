@@ -1,6 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <h2>{{ title }}</h2>
+    <Item :items="items"></Item>
     <img src="./assets/logo.png">
+    <router-link :to="{ name: 'Hello' }">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/item">Item</router-link>
     <router-view/>
   </div>
 </template>

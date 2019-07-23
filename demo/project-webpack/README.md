@@ -1,6 +1,6 @@
 # project-webpack
 
-> datpt
+> A Vue.js project
 
 ## Build Setup
 

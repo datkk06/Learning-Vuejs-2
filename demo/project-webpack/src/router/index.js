@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import About from '@/components/About'
-import Item from '@/components/ListItem'
+import index from '@/components/ItemComponent'
+// import Item from '@/components/ListItem'
 
 Vue.use(Router)
 
@@ -20,8 +21,8 @@ export default new Router({
     },
     {
       path: '/item',
-      name: 'Item',
-      component: Item
+      name: 'index',
+      component: index
     }
   ]
 })

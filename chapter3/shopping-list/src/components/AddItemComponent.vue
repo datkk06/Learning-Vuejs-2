@@ -1,4 +1,4 @@
-<template>
+<template id="add-item">
   <div>
     <div class="input-group">
       <input type="text" class="input form-control" placeholder="add shopping list item">

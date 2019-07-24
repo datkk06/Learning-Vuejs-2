@@ -1,4 +1,4 @@
-<template>
+<template id="item-title">
   <div>
     change title
   </div>

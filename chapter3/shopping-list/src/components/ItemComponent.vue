@@ -1,4 +1,4 @@
-<template>
+<template id="item-select">
   <li :class="{ 'removed': item.checked }">
     <div class="checkbox">
       <label>
@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    props: ['item']
+    props: ['items']
   }
 </script>
 

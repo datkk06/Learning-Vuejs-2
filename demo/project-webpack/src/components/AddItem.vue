@@ -11,7 +11,7 @@
 <script>
 import AddItem from './AddItem'
 export default {
-  name: 'AddItem',
+  name: 'add-item',
   components: {
     AddItem
   },

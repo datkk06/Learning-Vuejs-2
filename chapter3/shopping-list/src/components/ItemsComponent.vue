@@ -1,4 +1,4 @@
-<template>
+<template item-list>
   <div>
     <item-component v-for="item in items" :item="item"></item-component>
   </div>

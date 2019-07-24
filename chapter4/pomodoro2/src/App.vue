@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <h2>
       <span>Pomodoro</span>
-      <controls-component></controls-component>
+      <controls-component v-bind:is_working="is_working"></controls-component>
     </h2>
     <state-title-component></state-title-component>
     <countdown-component></countdown-component>

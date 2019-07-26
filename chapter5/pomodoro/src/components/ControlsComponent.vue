@@ -1,24 +1,33 @@
-<template lang='jade'>
-  button(title='start' @click='start', :disabled='isStarted && !isPaused')
-    i.glyphicon.glyphicon-play
-  button(title='pause' @click='pause', :disabled='!isStarted || isPaused')
-    i.glyphicon.glyphicon-pause
-  button(title='stop' @click='stop', :disabled='!isStarted')
-    i.glyphicon.glyphicon-stop
+<template>
+  <span>
+    <button :disabled='isStarted && !isPaused' @click="start">
+      <i class="glyphicon glyphicon-play"></i>
+    </button>
+    <button :disabled='isPaused || !isStarted' @click="pause">
+      <i class="glyphicon glyphicon-pause"></i>
+    </button>
+    <button :disabled='!isStarted' @click="stop">
+      <i class="glyphicon glyphicon-stop"></i>
+    </button>
+  </span>
 </template>
 
+
 <script>
-  import { start, pause, stop } from '../vuex/actions'
-  import { isStarted, isStopped, isPaused } from '../vuex/getters'
+  import { mapGetters, mapActions } from 'vuex'
+  // import { start, pause, stop } from '../vuex/actions'
+  // import { isStarted, isStopped, isPaused } from '../vuex/getters'
   export default {
-    vuex: {
-      getters: {
-        isStarted, isStopped, isPaused
-      },
-      actions: {
-        start, pause, stop
-      }
-    }
+    // vuex: {
+    //   getters: {
+    //     isStarted, isStopped, isPaused
+    //   },
+    //   actions: {
+    //     start, pause, stop
+    //   },
+    // },
+    computed: mapGetters(['isStarted', 'isStopped', 'isPaused']),
+    methods: mapActions(['start', 'stop', 'pause'])
   }
 </script>
 

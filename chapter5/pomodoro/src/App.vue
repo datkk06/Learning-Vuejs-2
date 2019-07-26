@@ -15,6 +15,7 @@ import KittensComponent from './components/KittensComponent'
 import StateTitleComponent from './components/StateTitleComponent'
 import store from './vuex/store'
 import { isWorking } from './vuex/getters'
+import { mapGetters } from 'vuex'
 
 export default {
   store,
@@ -28,7 +29,11 @@ export default {
     getters: {
       isworking: isWorking
     }
-  }
+  },
+  computed: mapGetters({
+    isWorking: 'isWorking'
+  }),
+  store
 }
 </script>
 

@@ -5,14 +5,19 @@
 </template>
 
 <script>
-  import { getMinutes, getSeconds } from '../vuex/getters'
+  // import { getMinutes, getSeconds } from '../vuex/getters'
+  import { mapGetters } from 'vuex'
   export default {
-    vuex: {
-      getters: {
-        min: getMinutes,
-        sec: getSeconds
-      }
-    }
+    // vuex: {
+    //   getters: {
+    //     min: getMinutes,
+    //     sec: getSeconds
+    //   }
+    // },
+    computed: mapGetters({
+      min: 'getMinutes',
+      sec: 'getSeconds'
+    })
   }
 </script>
 

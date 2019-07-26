@@ -4,6 +4,7 @@
 
 <script>
   import { isWorking } from '../vuex/getters'
+  import { mapGetters } from 'vuex'
 
   export default {
     data () {
@@ -12,11 +13,14 @@
         restingtitle: 'Rest!'
       }
     },
-    vuex: {
-      getters: {
-        isworking: isWorking
-      }
-    }
+    // vuex: {
+    //   getters: {
+    //     isworking: isWorking
+    //   }
+    // },
+    computed: mapGetters({
+      isWorking: 'isWorking'
+    })
   }
 </script>
 
